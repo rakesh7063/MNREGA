@@ -3,6 +3,8 @@ package com.job.dao;
 import java.util.List;
 
 import com.job.exception.BDOException;
+import com.job.exception.GPMException;
+import com.job.exception.ProjectException;
 import com.job.modelClass.BDOBenn;
 import com.job.modelClass.Employee;
 import com.job.modelClass.GPMBenn;
@@ -19,5 +21,9 @@ public interface BDODao {
 	 
 	 public List<GPMBenn>ListOfGMP() throws BDOException;
 	 
+	 public ProjectsBeen AllocateProjectUnderGmp(String gname, int pid) throws ProjectException,GPMException;
+
+	 public Employee ListOfEmployeeWorkingOnThatProject(int proId) throws ProjectException;
 	 
+	
 }

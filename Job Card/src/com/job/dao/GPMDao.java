@@ -1,0 +1,24 @@
+package com.job.dao;
+
+import com.job.exception.EmployeeException;
+import com.job.exception.GPMException;
+import com.job.exception.ProjectException;
+import com.job.modelClass.Employee;
+import com.job.modelClass.GPMBenn;
+import com.job.modelClass.ProjectsBeen;
+
+public interface GPMDao {
+
+	public GPMBenn LoginGPM(String username, String password) throws GPMException;
+	
+	public String CreatedEmployee(Employee employee) throws GPMException;
+	
+	public ProjectsBeen EmployeeAllocateProject(int emId, int ProjId) throws EmployeeException,ProjectException;
+	
+	public Employee ViewDetailsEmployee(int emid) throws EmployeeException;
+	
+	public String UpdatePassworToGPM(String username,String password) throws GPMException;
+	
+	public ProjectsBeen TotalNumberOfDaysEmployeeWorkedInProject (int projectId) throws ProjectException; 
+	
+}

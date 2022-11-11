@@ -8,11 +8,10 @@ public class ProjectsBeen {
 	private String location;
 	private int proectNo;
 	
-	private void ProjectBenn() {
-		// TODO Auto-generated method stub
 
+	public ProjectsBeen() {
+		// TODO Auto-generated constructor stub
 	}
-
 
 	public String getName() {
 		return name;

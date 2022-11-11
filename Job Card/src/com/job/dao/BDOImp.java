@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.job.exception.BDOException;
+import com.job.exception.GPMException;
+import com.job.exception.ProjectException;
 import com.job.modelClass.BDOBenn;
 import com.job.modelClass.Employee;
 import com.job.modelClass.GPMBenn;
@@ -220,6 +222,119 @@ List<GPMBenn> gpms= new ArrayList<>();
 		
 		
 		return gpms;
+	}
+
+	@Override
+	public ProjectsBeen AllocateProjectUnderGmp(String name, int pid) throws ProjectException,GPMException {
+		ProjectsBeen pro = null;
+		
+		try (Connection conn = DBUtility.ProvideConnetion()) {
+			
+			PreparedStatement ps = conn.prepareStatement("select gid from gpm where gname = ?");
+			
+			ps.setString(1, name);
+			
+			ResultSet rs1 = ps.executeQuery();
+			
+			if(rs1.next()) {
+			PreparedStatement ps2=conn.prepareStatement("select projectNo,pname from projects where projectNo = ?");
+			int gid = rs1.getInt("gid");
+			
+			ps2.setInt(1, pid);
+			
+			ResultSet rs2 = ps2.executeQuery();
+			
+			if(rs2.next()) {
+				String ProName = rs2.getString("pname");
+				
+			PreparedStatement ps3 = conn.prepareStatement("insert into allocate_project values(?,?)");
+			
+			ps3.setInt(1, gid);
+			ps3.setInt(2, pid);
+			
+		 	int x = ps3.executeUpdate();
+		 	if(x>0) {
+		 		pro = new ProjectsBeen();
+		 		pro.setName(ProName);
+		 		
+		 	}
+		 	else {
+		 		throw new ProjectException("Technical eror......");
+		 	}
+				
+				
+			}
+			else {
+				throw new ProjectException("Invalid Project id....");
+			}
+				
+				
+			}
+			else {
+				throw new GPMException("B.D.O is not found "+name);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new GPMException(e.getMessage());
+		}
+		
+		
+		
+		
+		return pro;
+	}
+
+	@Override
+	public Employee ListOfEmployeeWorkingOnThatProject(int proId) throws ProjectException {
+		
+		Employee emp = null;
+		
+		
+		try(Connection conn = DBUtility.ProvideConnetion()) {
+			
+			PreparedStatement ps = conn.prepareStatement("select * from projects where projectNo =?");
+			
+			ps.setInt(1, proId);
+			
+			ResultSet rs1 = ps.executeQuery();
+			
+			if(rs1.next()) {
+			PreparedStatement ps1=conn.prepareStatement(" select count(projAssigned)totalemployee ,sum(wages)total_wages,p. pname  from employee e INNER JOIN Projects p ON e.projAssigned = p.projectNO where p.projectNo=?");
+				
+				ps1.setInt(1, proId);
+				ResultSet rs2 = ps1.executeQuery();
+				if(rs2.next()) {
+					int totalepm = rs2.getInt("totalemployee");
+					int totalwage = rs2.getInt("total_wages");
+					String name = rs2.getString("pname");
+					
+					
+					emp = new Employee();
+					emp.setNo_of_days(totalepm);
+					emp.setWages(totalwage);
+					ProjectsBeen proj = new ProjectsBeen();
+					proj.setName(name);
+					emp.setProject(proj);
+				}
+				
+			}
+			else
+				throw new ProjectException("invaid Project ID : "+proId);
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new ProjectException(e.getMessage());
+		}
+		
+		
+		
+		
+		
+		
+		return emp;
+		
 	}
 
 	

@@ -12,7 +12,7 @@ private int no_of_days;
 private int wages;
 private int ProId;
 private int GPMId;
-
+private ProjectsBeen project;
 
 public Employee() {
 	// TODO Auto-generated constructor stub
@@ -109,8 +109,8 @@ public void setGPMId(int gPMId) {
 }
 
 
-public Employee(String name, String gender, String address, String phoneNo, int no_of_days, int wages, int proId,
-		int gPMId) {
+public Employee(String name, String gender, String address, String phoneNo, int no_of_days, int wages
+		) {
 	super();
 	this.name = name;
 	this.gender = gender;
@@ -118,8 +118,17 @@ public Employee(String name, String gender, String address, String phoneNo, int 
 	this.phoneNo = phoneNo;
 	this.no_of_days = no_of_days;
 	this.wages = wages;
-	ProId = proId;
-	GPMId = gPMId;
+	
+}
+
+
+public ProjectsBeen getProject() {
+	return project;
+}
+
+
+public void setProject(ProjectsBeen project) {
+	this.project = project;
 }
 
 
@@ -127,8 +136,11 @@ public Employee(String name, String gender, String address, String phoneNo, int 
 public String toString() {
 	return "Employee [id=" + id + ", name=" + name + ", gender=" + gender + ", address=" + address + ", phoneNo="
 			+ phoneNo + ", no_of_days=" + no_of_days + ", wages=" + wages + ", ProId=" + ProId + ", GPMId=" + GPMId
-			+ "]";
+			+ ", project=" + project + "]";
 }
+
+
+
 
 
 
