@@ -165,29 +165,37 @@ try (Connection conn = DBUtility.ProvideConnetion()) {
 			int proId = rs1.getInt("projAssigned");
 			int wages = rs1.getInt("wages");
 			
-			PreparedStatement ps2 = conn.prepareStatement("select pname from projects where projectNo = ?");
-			
-			ps2.setInt(1, proId);
-			
-			ResultSet rs2 = ps2.executeQuery();
-			
-			while(rs2.next()) {
-				String ProName = rs2.getString("pname");
-				
-				emp = new Employee();
-				emp.setName(ename);
-				emp.setGender(gender);
-				emp.setAddress(address);
-				emp.setId(empid);
-				emp.setPhoneNo(phone);
-				ProjectsBeen pro = new ProjectsBeen();
-				pro.setName(ProName);
-				emp.setProject(pro);
-				emp.setWages(wages);
-				
-				
-				
-			}
+			emp = new Employee();
+			emp.setName(ename);
+			emp.setGender(gender);
+			emp.setAddress(address);
+			emp.setId(empid);
+			emp.setPhoneNo(phone);
+			emp.setWages(wages);
+			emp.setNo_of_days(douty);
+//			if(proId>0) {
+//			
+//			PreparedStatement ps2 = conn.prepareStatement("select pname from projects where projectNo = ?");
+//			
+//			ps2.setInt(1, proId);
+//			
+//			ResultSet rs2 = ps2.executeQuery();
+//			
+//			if(rs2.next()) {
+//				
+//				String ProName = rs2.getString("pname");
+//				
+//				
+//				ProjectsBeen pro = new ProjectsBeen();
+//				pro.setName(ProName);
+//				
+//				
+//				
+//				System.out.println(ProName);
+//				
+//			}
+//			
+//			}
 			
 			
 			

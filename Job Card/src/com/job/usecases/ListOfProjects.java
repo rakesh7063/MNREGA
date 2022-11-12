@@ -10,7 +10,7 @@ import com.job.modelClass.ProjectsBeen;
 
 public class ListOfProjects {
 
-	public static void main(String[] args) {
+	public static void ProjectsList() {
 		// TODO Auto-generated method stub
 		
 		BDODao daos = new BDOImp();

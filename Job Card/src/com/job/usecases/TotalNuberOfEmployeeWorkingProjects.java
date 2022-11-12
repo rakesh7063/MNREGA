@@ -9,7 +9,7 @@ import com.job.modelClass.ProjectsBeen;
 
 public class TotalNuberOfEmployeeWorkingProjects {
 
-	public static void main(String[] args) {
+	public static void NumberOfDayWorkingEmployee() {
 		
 		
 		Scanner sc = new Scanner(System.in);

@@ -9,7 +9,7 @@ import com.job.modelClass.GPMBenn;
 
 public class GPMCratedByBDO {
 
-	public static void main(String[] args) {
+	public static void GPMAddByBDO() {
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Gram pranchayit member name ");

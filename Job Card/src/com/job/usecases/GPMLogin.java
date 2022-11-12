@@ -10,8 +10,9 @@ import com.job.modelClass.GPMBenn;
 
 public class GPMLogin {
 
-	public static void main(String[] args) {
+	public static Boolean LoginToGPM() {
 		
+		Boolean flag =false;
     Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Enter Username");
@@ -29,12 +30,14 @@ public class GPMLogin {
 		GPMBenn gpm = dao.LoginGPM(name, password);
 			
 			System.out.println("Welcome to Gram Panchayet member "+ gpm.getName());
+			flag = true;
 			
 		} catch (GPMException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
+		return flag;
 
 	}
 

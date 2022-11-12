@@ -8,7 +8,7 @@ import com.job.exception.GPMException;
 
 public class UpdatePassworUsecase {
 
-	public static void main(String[] args) {
+	public static void PasswordUpdateToGPM() {
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Username..");

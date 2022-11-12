@@ -9,7 +9,7 @@ import com.job.modelClass.Employee;
 
 public class CreatedEmployee {
 
-	public static void main(String[] args) {
+	public static void AddEmployeeUserCase() {
 
 
 		Scanner sc= new Scanner(System.in);

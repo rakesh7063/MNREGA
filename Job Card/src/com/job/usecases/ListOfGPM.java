@@ -9,7 +9,7 @@ import com.job.modelClass.GPMBenn;
 
 public class ListOfGPM {
 
-	public static void main(String[] args) {
+	public static void GPMList() {
 		// TODO Auto-generated method stub
 		
 		BDODao daos =new BDOImp();

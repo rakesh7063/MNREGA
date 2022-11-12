@@ -9,7 +9,7 @@ import com.job.modelClass.Employee;
 
 public class ListOfEmployeeOnThatProjects {
 
-	public static void main(String[] args) {
+	public static void HowManyEmployeeWorkingProjects() {
 		
 		
 		Scanner sc = new Scanner(System.in);

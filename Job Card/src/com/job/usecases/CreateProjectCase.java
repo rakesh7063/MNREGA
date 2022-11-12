@@ -9,7 +9,8 @@ import com.job.modelClass.ProjectsBeen;
 
 public class CreateProjectCase {
 
-	public static void main(String[] args) {
+	public static void AddProjects() {
+		
 		Scanner sc= new Scanner(System.in);
 		System.out.println("Enter Project Name");
 		String projectname = sc.next();
