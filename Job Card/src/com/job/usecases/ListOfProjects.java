@@ -3,6 +3,7 @@ package com.job.usecases;
 import java.util.List;
 import java.util.Scanner;
 
+import com.job.CustomColor.ConsoleColor;
 import com.job.dao.BDODao;
 import com.job.dao.BDOImp;
 import com.job.exception.BDOException;
@@ -19,12 +20,12 @@ public class ListOfProjects {
 		List<ProjectsBeen> dao =daos.ListOfProjects();
 		
 		for (ProjectsBeen projectsBeen : dao) {
-			System.out.println("Project name : " + projectsBeen.getName());
-			System.out.println("Project No : " + projectsBeen.getProectNo());
-			System.out.println("Number of Employee is working : " + projectsBeen.getNoOfEmployee());
-			System.out.println(" Our Project locate at : " + projectsBeen.getLocation());
-			System.out.println("Our project total wages : " + projectsBeen.getTotalWages());
-			System.out.println("===================================================");
+			System.out.println(ConsoleColor.BLUE_ITALIC+ "Project name : " + projectsBeen.getName()+ ConsoleColor.RESET);
+			System.out.println(ConsoleColor.BLUE_ITALIC+"Project No : " + projectsBeen.getProectNo()+ ConsoleColor.RESET);
+			System.out.println(ConsoleColor.BLUE_ITALIC+"Number of Employee is working : " + projectsBeen.getNoOfEmployee()+ ConsoleColor.RESET);
+			System.out.println(ConsoleColor.BLUE_ITALIC+" Our Project locate at : " + projectsBeen.getLocation()+ ConsoleColor.RESET);
+			System.out.println(ConsoleColor.BLUE_ITALIC+"Our project total wages : " + projectsBeen.getTotalWages()+ ConsoleColor.RESET);
+			System.out.println(ConsoleColor.BLUE_ITALIC+"==================================================="+ ConsoleColor.RESET);
 			
 		}
 		

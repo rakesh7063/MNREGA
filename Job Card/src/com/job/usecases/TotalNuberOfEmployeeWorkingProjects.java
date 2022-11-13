@@ -2,6 +2,7 @@ package com.job.usecases;
 
 import java.util.Scanner;
 
+import com.job.CustomColor.ConsoleColor;
 import com.job.dao.GPMDao;
 import com.job.dao.GPMImp;
 import com.job.exception.ProjectException;
@@ -20,9 +21,9 @@ public class TotalNuberOfEmployeeWorkingProjects {
 		
 		try {
 			ProjectsBeen pro = dao.TotalNumberOfDaysEmployeeWorkedInProject(id);
-			System.out.println("In "+pro.getName()+" Project total number of days Employee worked is "
+			System.out.println(ConsoleColor.BLUE_ITALIC+ "In "+pro.getName()+" Project total number of days Employee worked is "
 							+pro.getNoOfEmployee()+" days and their total wages is "+
-					pro.getTotalWages());
+					pro.getTotalWages()+ ConsoleColor.RESET);
 			
 			
 		} catch (ProjectException e) {

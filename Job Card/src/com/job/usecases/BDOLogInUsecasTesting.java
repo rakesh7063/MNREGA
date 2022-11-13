@@ -17,10 +17,10 @@ public class BDOLogInUsecasTesting {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Enter Username");
+		System.out.println(ConsoleColor.BANANA_YELLOW+"Enter Username"+ConsoleColor.RESET);
 		String name = sc.nextLine();
 		
-		System.out.println("Enter Password");
+		System.out.println(ConsoleColor.BANANA_YELLOW+ "Enter Password"+ ConsoleColor.RESET);
 		String password = sc.next();
 		
 		

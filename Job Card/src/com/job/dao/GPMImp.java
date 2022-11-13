@@ -173,27 +173,27 @@ try (Connection conn = DBUtility.ProvideConnetion()) {
 			emp.setPhoneNo(phone);
 			emp.setWages(wages);
 			emp.setNo_of_days(douty);
-//			if(proId>0) {
-//			
-//			PreparedStatement ps2 = conn.prepareStatement("select pname from projects where projectNo = ?");
-//			
-//			ps2.setInt(1, proId);
-//			
-//			ResultSet rs2 = ps2.executeQuery();
-//			
-//			if(rs2.next()) {
-//				
-//				String ProName = rs2.getString("pname");
-//				
-//				
-//				ProjectsBeen pro = new ProjectsBeen();
-//				pro.setName(ProName);
-//				
-//				
-//				
-//				System.out.println(ProName);
-//				
-//			}
+			
+			
+			PreparedStatement ps2 = conn.prepareStatement("select pname from projects where projectNo = ?");
+			
+			ps2.setInt(1, proId);
+			
+			ResultSet rs2 = ps2.executeQuery();
+			
+			if(rs2.next()) {
+				
+				String ProName = rs2.getString("pname");
+				
+				
+				ProjectsBeen pro = new ProjectsBeen();
+				pro.setName(ProName);
+				
+				emp.setProject(pro);
+				
+				
+				
+			}
 //			
 //			}
 			
@@ -209,17 +209,7 @@ try (Connection conn = DBUtility.ProvideConnetion()) {
 			throw new EmployeeException(e.getMessage());
 		}
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
 		return emp;
 		
 	}

@@ -2,7 +2,7 @@ package com.job.usecases;
 
 import java.util.Scanner;
 
-
+import com.job.CustomColor.ConsoleColor;
 import com.job.dao.GPMDao;
 import com.job.dao.GPMImp;
 import com.job.exception.GPMException;
@@ -29,13 +29,13 @@ public class GPMLogin {
 			
 		GPMBenn gpm = dao.LoginGPM(name, password);
 			
-			System.out.println("Welcome to Gram Panchayet member "+ gpm.getName());
+			System.out.println(ConsoleColor.GREEN+ "Welcome to Gram Panchayet member "+ gpm.getName()+ ConsoleColor.RESET);
 			flag = true;
 			
 		} catch (GPMException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			System.out.println(e.getMessage());
+			System.out.println(ConsoleColor.RED+ e.getMessage()+ ConsoleColor.RESET);
 		}
 		return flag;
 

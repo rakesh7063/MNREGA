@@ -16,6 +16,7 @@ import com.job.usecases.ListOfEmployeeOnThatProjects;
 import com.job.usecases.ListOfGPM;
 import com.job.usecases.ListOfProjects;
 import com.job.usecases.TotalNuberOfEmployeeWorkingProjects;
+import com.job.usecases.UpdatePassworUsecase;
 import com.job.usecases.ViewEmployeeDetals;
 
 public class UserClass {
@@ -70,9 +71,25 @@ public class UserClass {
 	}
 	 	static void GPMlogin() {
 	 		boolean check = GPMLogin.LoginToGPM();
-	 		if (check)GPMMethods();
-	 		else GPMlogin();
-			
+	 		if (check) {
+	 			
+	 			GPMMethods();
+	 		}
+	 		
+	 		else {
+	 			System.out.println(ConsoleColor.BROWN+ "You Can Update Your Password.."+ConsoleColor.RESET);
+	 			System.out.println(ConsoleColor.YELLOW+"1. Update Password "+"\n"+
+	 			"2 Back to login"+ConsoleColor.RESET);
+	 			Scanner sc = new Scanner(System.in);
+	 			int x = sc.nextInt();
+	 			if(x==1) {
+	 				UpdatePassworUsecase.PasswordUpdateToGPM();
+		 			Wellcome();
+	 			}
+	 			
+	 			Wellcome();
+	 			
+	 		}
 	}
 	 	
 	 	static void BDOMethods() {
@@ -153,6 +170,7 @@ public class UserClass {
 							 + "| 2. View Details of Employee                                |" + "\n"
 							 + "| 3. Assign Employee to a Project                            |" + "\n"
 							 + "| 4. View total numbers of days Employee worked in a Project |" + "\n"
+							 + "| 5. Update your Password                                    |" + "\n"
 							 + "| 5. Back To Login Panel                                     |" + "\n"
 							 + "| 6. Exit                                                    |" + "\n"
 							 + "+--------------------------------+" + ConsoleColor.RESET);
@@ -198,9 +216,13 @@ public class UserClass {
 					GPMMethods();
 				}
 				break;
-				case 5 :Wellcome();
+				case 5: {
+					UpdatePassworUsecase.PasswordUpdateToGPM();
+					GPMMethods();
+				}
+				case 6 :Wellcome();
 				break;	
-				case 6 : {
+				case 7 : {
 					System.out.println(ConsoleColor.BLUE_BOLD + "Thank you ! Visit again" + ConsoleColor.RESET);					
 					System.exit(0);
 				}

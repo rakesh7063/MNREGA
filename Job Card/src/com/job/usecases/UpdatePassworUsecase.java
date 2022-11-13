@@ -2,6 +2,7 @@ package com.job.usecases;
 
 import java.util.Scanner;
 
+import com.job.CustomColor.ConsoleColor;
 import com.job.dao.GPMDao;
 import com.job.dao.GPMImp;
 import com.job.exception.GPMException;
@@ -19,7 +20,7 @@ public class UpdatePassworUsecase {
 		GPMDao dao = new GPMImp();
 		try {
 			String res = dao.UpdatePassworToGPM(username, password);
-			System.out.println(res);
+			System.out.println(ConsoleColor.GREEN_BACKGROUND+ res+  ConsoleColor.RESET);
 
 		} catch (GPMException e) {
 			
