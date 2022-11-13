@@ -1,0 +1,87 @@
+package com.job.modelClass;
+
+public class ProjectsBeen {
+
+	private String name;
+	private int noOfEmployee;
+	private int totalWages;
+	private String location;
+	private int proectNo;
+	
+
+	public ProjectsBeen() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public int getNoOfEmployee() {
+		return noOfEmployee;
+	}
+
+
+	public void setNoOfEmployee(int noOfEmployee) {
+		this.noOfEmployee = noOfEmployee;
+	}
+
+
+	public int getTotalWages() {
+		return totalWages;
+	}
+
+
+	public void setTotalWages(int totalWages) {
+		this.totalWages = totalWages;
+	}
+
+
+	public String getLocation() {
+		return location;
+	}
+
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+
+	public ProjectsBeen(String name, int noOfEmployee, int totalWages, String location, int proectNo) {
+		super();
+		this.name = name;
+		this.noOfEmployee = noOfEmployee;
+		this.totalWages = totalWages;
+		this.location = location;
+		this.proectNo = proectNo;
+	}
+
+
+	public int getProectNo() {
+		return proectNo;
+	}
+
+
+	public void setProectNo(int proectNo) {
+		this.proectNo = proectNo;
+	}
+
+
+	@Override
+	public String toString() {
+		return "ProjectsBeen [name=" + name + ", noOfEmployee=" + noOfEmployee + ", totalWages=" + totalWages
+				+ ", location=" + location + ", proectNo=" + proectNo + "]";
+	}
+
+
+	
+	
+	
+	
+}
