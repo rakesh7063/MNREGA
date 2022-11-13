@@ -1,88 +1,94 @@
 
 
 <h1>The Mahatma Gandhi National Rural Employment Guarantee Act Backend Application</h1>
-2
- 
-3
-​
-4
 <h1>Project Logo:</h1>
-5
-​
-6
+<img width="800px" src="https://user-images.githubusercontent.com/105923141/201533166-612dc804-6a1c-4a07-9a02-c1f7c56c9285.jpeg">
 
-8
-# The Basic Prerequisites of this Applications are.
-9
-- [x] Should Have a MySQL Server and a Database Created.
-10
-- [x] Should have created folllowing tables into the database WITH SAME DATATYPES.
-11
-​
-12
 # Description :-
-13
 The MGNREGA was initiated with the objective of “enhancing livelihood security in rural areas by providing at least 100 days of guaranteed wage employment in a financial year, to every household whose adult members volunteer to do unskilled manual work”.
-14
-​
-15
+# The Basic Prerequisites of this Applications are.
+- [x] Should Have a MySQL Server and a Database Created.
+- [x] Should have created folllowing tables into the database WITH SAME DATATYPES.
 # Users of this project are :-
-16
 • BDO </br>
-17
 • Gram Panchayat Member(GPM) </br>
-18
-​
-19
+
 <h3>BDO Roles are:</h3>
-20
-​
-21
+
 - BDO can Login into their account
-22
 - BDO can Create a project
-23
 - BDO can View List Of Project
-24
 - BDO can Create new Gram Panchayat Member(GPM)
-25
 - BDO can View all the GPM
-26
 - BDO can Allocate  Project to GPM
-27
 - BDO can See List of Employee working on that Project and their wages
-28
-​
-29
+
 <h3>Gram Panchayat Member(GPM) Roles are:</h3>
-30
-​
-31
+
 - GPM can Login into their Account
-32
+- GPM can Update their password
 - GPM can Create Employee
-33
 - GPM can View the Details of Employee
-34
 - GPM can Assign Employee to a Project
-35
 - GPM can View total number of days Employee worked in a project and also their wages
-36
-​
-37
+
 # Tech stack and Tools used 
-38
-​
-39
+
 - Java
-40
 - MySQL
-41
 - Git & GitHub
-42
-​
-43
+
 # Lessons Learned
-44
-​
-# damp-system-3320
+
+- Gain excessive knowledge on application of Java and MySQL.
+- Enjoyed the process of learning and creating the application.
+
+
+# Flow of Application
+
+<h3>Database Schema:</h3>
+
+![Untitled](https://user-images.githubusercontent.com/105923141/201533787-4d06207a-331d-44fe-86d7-82386c456b27.png)
+
+*Start View Of Application*
+## **BDO Login** 
+-*BDO login Details:- username (rakesh kandar) and password (12345)*</br>
+-*BDO Features will be shown after successfully login*
+
+![BDOlogin](https://user-images.githubusercontent.com/105923141/201534635-82be7419-10eb-4dcf-8eab-815195da0ab8.png)
+
+## **GPM Login** 
+-*GPM will be login through crediantial provided by BDO*</br>
+-*GPM can change password but username will always be unique which is provided by BDO*</br>
+-*All features of GPM will be shown after successfully login*
+</br>
+![gpm login](https://user-images.githubusercontent.com/105923141/201534933-5cebfb21-4af3-497d-b77c-8f8d61530a4e.png)
+
+</br>
+
+## **Assign Employee to a Project** 
+![Project assing](https://user-images.githubusercontent.com/105923141/201535385-ce4ffd90-1351-4685-8384-09248a60423d.png)
+## **Exception Handling**
+-*If user provides wrong input, the appropriate error message will appear*
+</br>
+
+![ExceptionPart1](https://user-images.githubusercontent.com/105923141/201536176-67b2b2eb-8c25-4f70-878e-e97d751730ff.png)
+
+
+## **Details Of Employee**
+-*GPM can see Employee details*
+</br>
+
+![Employee1](https://user-images.githubusercontent.com/105923141/201536439-94268471-057a-45af-b194-690f98cde157.png)
+
+![Employee2](https://user-images.githubusercontent.com/105923141/201536448-284ee91d-a4cd-445a-a402-7697ccde1873.png)
+
+# Feedback
+> Valuable feedback will be appreciated.
+> You can reach out to me via below medium.
+
+- [Email](rakeshkandar2021@gmail.com)
+- [Linkedin](inkedin.com/in/rakesh-kandar-180a58244/)
+
+
+# Thank you for reading 🤗 ! Visit Again......
