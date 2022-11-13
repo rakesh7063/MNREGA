@@ -87,8 +87,7 @@ The MGNREGA was initiated with the objective of “enhancing livelihood security
 > Valuable feedback will be appreciated.
 > You can reach out to me via below medium.
 
-- [Email](rakeshkandar2021@gmail.com)
-- [Linkedin](inkedin.com/in/rakesh-kandar-180a58244/)
+<a href="https://linkedin.com/in/rakesh kandar" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="rakesh kandar" height="30" width="40" /></a>
 
 
 # Thank you for reading 🤗 ! Visit Again......
