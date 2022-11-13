@@ -1,0 +1,30 @@
+package com.job.MainClass;
+
+public class UserClass {
+	
+	static void BDOORGPM() {
+		System.out.println(Console.BLUE + "+---------------------------+" + "\n"
+						 						   + "| 1. Login As BDO |" + "\n"
+						 						   + "| 2. Login As GPM |" + "\n"
+						 						   + "| 3. Exit                   |" + "\n"
+						 						   + "+---------------------------+" + Console.RESET);
+	}
+	public static void main(String[] args) {
+		System.out.println( Console.BANANA_YELLOW+  "::::WELCOME To Mahatma Gandhi National Rural Employment Guarantee Act Application::::"+Console.BLACK_BACKGROUND_BRIGHT);
+		
+		BDOORGPM();
+	
+	}
+	
+	
+	
+	
+
+	public static void main(String[] args) {
+		
+		
+		
+
+	}
+
+}

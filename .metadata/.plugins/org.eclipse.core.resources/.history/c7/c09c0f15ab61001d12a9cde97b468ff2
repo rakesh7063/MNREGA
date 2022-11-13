@@ -1,0 +1,86 @@
+package com.job.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.job.exception.GPMException;
+import com.job.modelClass.Employee;
+import com.job.modelClass.GPMBenn;
+import com.job.utility.DBUtility;
+
+public class GPMImp implements GPMDao {
+
+	@Override
+	public GPMBenn LoginGPM(String username, String password) throws GPMException {
+		GPMBenn gpm = null;
+		
+		try (Connection conn = DBUtility.ProvideConnetion()) {
+			
+			PreparedStatement ps = conn.prepareStatement("select gname from gpm where username=? and password = ?");
+			ps.setString(1, username);
+			ps.setString(2, password);
+			ResultSet rs =  ps.executeQuery();
+			
+			if(rs.next()) {
+			String name =	rs.getString("gname");
+				gpm = new GPMBenn();
+				gpm.setName(name);
+				
+			}
+			else {
+				throw new GPMException("Invaid password or username");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new GPMException(e.getMessage());
+			
+			
+		}
+		
+		
+		
+		
+		return gpm;
+	}
+
+	@Override
+	public String CreatedEmployee(Employee employee) throws GPMException {
+		String result = "Not inserted";
+		
+		try (Connection conn = DBUtility.ProvideConnetion()) {
+			
+		PreparedStatement ps =	conn.prepareStatement("insert into Employee (ename,egender, eaddress,ephone,no_duty_day,wages)"
+					                                                           +"values(?,?,?,?,?,?)");
+			
+			ps.setString(1, employee.getName());
+			ps.setString(2, employee.getGender());
+			ps.setString(3, employee.getAddress());
+			ps.setString(4, employee.getGender());
+			ps.setInt(5, employee.getNo_of_days());
+			ps.setInt(6, employee.getWages());
+			
+			int x = ps.executeUpdate();
+			if(x>0) {
+				result = "Employee create sucsessfuly...";
+			}
+			
+			
+			
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+			throw new GPMException(e.getMessage());
+
+			
+			
+		}
+		return result;
+		
+	}
+	
+	
+
+}

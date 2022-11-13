@@ -1,0 +1,10 @@
+package com.job.usecases;
+
+public class GPMCratedByBDO {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

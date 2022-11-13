@@ -1,0 +1,11 @@
+package com.job.dao;
+
+import com.job.exception.BDOException;
+import com.job.modelClass.BDOBenn;
+
+public interface BDODao {
+
+	public BDOBenn BDOLogIn(String username, String password) throws BDOException;
+	
+	
+}

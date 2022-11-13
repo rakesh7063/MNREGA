@@ -1,0 +1,14 @@
+package com.job.usecases;
+
+import java.util.Scanner;
+
+public class AssingProjectToEmployee {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = Scanner(System.in);
+		
+
+	}
+
+}

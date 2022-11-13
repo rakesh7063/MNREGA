@@ -1,0 +1,229 @@
+package com.job.MainClass;
+
+import java.io.Console;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+import com.job.CustomColor.ConsoleColor;
+import com.job.usecases.AllocateProjectUsecase;
+import com.job.usecases.AssingProjectToEmployee;
+import com.job.usecases.BDOLogInUsecasTesting;
+import com.job.usecases.CreateProjectCase;
+import com.job.usecases.CreatedEmployee;
+import com.job.usecases.GPMCratedByBDO;
+import com.job.usecases.GPMLogin;
+import com.job.usecases.ListOfEmployeeOnThatProjects;
+import com.job.usecases.ListOfGPM;
+import com.job.usecases.ListOfProjects;
+import com.job.usecases.TotalNuberOfEmployeeWorkingProjects;
+import com.job.usecases.ViewEmployeeDetals;
+
+public class UserClass {
+	
+	static void Wellcome() {
+		System.out.println(ConsoleColor.BLUE + "+---------------------------+" + "\n"
+						 						   + "| 1. Login As BDO |" + "\n"
+						 						   + "| 2. Login As GPM |" + "\n"
+						 						   + "| 3. Exit                   |" + "\n"
+						 						   + "+---------------------------+" + ConsoleColor.RESET);
+		
+		choice();
+	}
+
+	static void choice() {
+		Scanner sc = new Scanner(System.in);
+		
+		int choice = 0;
+		try {
+			choice = sc.nextInt();
+		}
+		catch (InputMismatchException e) {
+			System.out.println(ConsoleColor.RED_BACKGROUND + "Input type should be number" + ConsoleColor.RESET);
+			BDOlogin();
+		}
+		
+		if (choice == 1) {
+			System.out.println(ConsoleColor.WHITE_BOLD + "Welcome BDO ! Please Login to your account" + ConsoleColor.RESET);
+			BDOlogin();
+		}
+		else if (choice == 2) {
+			System.out.println(ConsoleColor.YELLOW_BOLD + "Welcome Gram Panchayat Member !" + ConsoleColor.RESET);
+			GPMlogin();
+		}
+		else if (choice == 3) {
+			System.out.println(ConsoleColor.BROWN + "Thank you ! Visit again" + ConsoleColor.RESET);
+			System.exit(0);
+		}
+		else {
+			System.out.println(ConsoleColor.RED_BACKGROUND + "Please choose a number from below options" + ConsoleColor.RESET);
+			Wellcome();
+		}
+	}
+	 	static void BDOlogin() {
+	 		Boolean result = BDOLogInUsecasTesting.LoginToBDO();
+
+			if (result) BDOMethods();
+			else {
+				BDOlogin();
+			}
+		
+	}
+	 	static void GPMlogin() {
+	 		boolean check = GPMLogin.LoginToGPM();
+	 		if (check)GPMMethods();
+	 		else GPMlogin();
+			
+	}
+	 	
+	 	static void BDOMethods() {
+			System.out.println(ConsoleColor.PURPLE + "+--------------------------------+" + "\n"
+							 + "| Welcome To BDO                                             |" + "\n"
+							 + "| 1. Create Projects                                         |" + "\n"
+							 + "| 2. View List of Projects                                   |" + "\n"
+							 + "| 3. Create New Gram Panchayat Member(GPM)                   |" + "\n"
+							 + "| 4. View All GPM                                            |" + "\n"
+							 + "| 5. Allocate Project to GPM                                 |" + "\n"
+							 + "| 6. List of Employee Working on that Project and their wages|" + "\n"
+							 + "| 7. Back To Login Panel                                     |" + "\n"
+							 + "| 8. Exit                                                    |" + "\n"
+							 + "+--------------------------------+" + ConsoleColor.RESET);
+			
+			Scanner sc = new Scanner(System.in);
+			
+			int choice = 0;
+			try {
+				choice = sc.nextInt();
+				if (choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice != 5 && choice !=6 && choice!=7 && choice!=8) {
+					System.out.println(ConsoleColor.RED_BACKGROUND + "Please choose a number from below options" + ConsoleColor.RESET);
+					BDOMethods();
+				}
+				else BDOChoice(choice);
+			}
+			catch (InputMismatchException e) {
+				
+				System.out.println(ConsoleColor.RED_BACKGROUND + "Input type should be number" + ConsoleColor.RESET);
+				BDOMethods();
+			}
+		}
+	 	static void BDOChoice(int choice) {
+			
+			switch(choice) {
+				case 1 : {
+					CreateProjectCase.AddProjects();
+					BDOMethods();
+				}
+				break;
+				case 2 : {
+					ListOfProjects.ProjectsList();
+					BDOMethods();
+				}
+				break;
+				case 3 : {
+					GPMCratedByBDO.GPMAddByBDO();
+					BDOMethods();
+				}
+				break;
+				case 4 : {
+					ListOfGPM.GPMList();
+					BDOMethods();
+				}
+				break;
+				case 5 : {
+					AllocateProjectUsecase.ProjectAllocateToGPM();
+					BDOMethods();
+				}
+				break;
+				case 6 : {
+					ListOfEmployeeOnThatProjects.HowManyEmployeeWorkingProjects();
+					BDOMethods();
+				}
+				break;
+				case 7 :Wellcome();
+				break;	
+				case 8 : {
+					System.out.println(ConsoleColor.BLUE_BOLD + "Thank you ! Visit again" + ConsoleColor.RESET);					
+					System.exit(0);
+				}
+			}
+	}
+	 	static void GPMMethods() {
+			System.out.println(ConsoleColor.PURPLE + "+--------------------------------+" + "\n"
+							 + "| Welcome To GPM                                             |" + "\n"
+							 + "| 1. Create Employee                                         |" + "\n"
+							 + "| 2. View Details of Employee                                |" + "\n"
+							 + "| 3. Assign Employee to a Project                            |" + "\n"
+							 + "| 4. View total numbers of days Employee worked in a Project |" + "\n"
+							 + "| 5. Back To Login Panel                                     |" + "\n"
+							 + "| 6. Exit                                                    |" + "\n"
+							 + "+--------------------------------+" + ConsoleColor.RESET);
+			
+			Scanner sc = new Scanner(System.in);
+			
+			int gchoice = 0;
+			try {
+				gchoice = sc.nextInt();
+				if (gchoice != 1 && gchoice != 2 && gchoice != 3 && gchoice != 4 && gchoice != 5 && gchoice !=6) {
+					System.out.println(ConsoleColor.RED_BACKGROUND + "Please choose a number from below options" + ConsoleColor.RESET);
+					GPMMethods();;
+				}
+				else GPMChoice(gchoice);
+			}
+			catch (InputMismatchException e) {
+				
+				System.out.println(ConsoleColor.RED_BACKGROUND + "Input type should be number" + ConsoleColor.RESET);
+				GPMMethods();
+			}
+		}
+        static void GPMChoice(int gchoice) {
+			
+			switch(gchoice) {
+				case 1 : {
+						CreatedEmployee.AddEmployeeUserCase();
+		
+					GPMMethods();
+				}
+				break;
+				case 2 : {
+					ViewEmployeeDetals.DetailsOfEmployee();
+					GPMMethods();
+				}
+				break;
+				case 3 : {
+					AssingProjectToEmployee.ProjectAssingEmployee();
+					GPMMethods();
+				}
+				break;
+				case 4 : {
+					TotalNuberOfEmployeeWorkingProjects.NumberOfDayWorkingEmployee();
+					GPMMethods();
+				}
+				break;
+				case 5 :Wellcome();
+				break;	
+				case 6 : {
+					System.out.println(ConsoleColor.BLUE_BOLD + "Thank you ! Visit again" + ConsoleColor.RESET);					
+					System.exit(0);
+				}
+			}
+        }
+	
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		System.out.println( ConsoleColor.PURPLE+  "::::WELCOME To Mahatma Gandhi National Rural Employment Guarantee Act Application::::"+ConsoleColor.WHITE_BACKGROUND);
+		System.out.println( ConsoleColor.YELLOW+ "					---- JOB CARD-----"+ConsoleColor.WHITE_BACKGROUND);
+		Wellcome();
+	
+	}
+	
+	
+	
+	
+
+	
+
+}

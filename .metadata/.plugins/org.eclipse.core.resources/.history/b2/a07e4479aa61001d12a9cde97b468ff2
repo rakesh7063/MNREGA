@@ -1,0 +1,14 @@
+package com.job.dao;
+
+import com.job.exception.GPMException;
+import com.job.modelClass.Employee;
+import com.job.modelClass.GPMBenn;
+
+public interface GPMDao {
+
+	public GPMBenn LoginGPM(String username, String password) throws GPMException;
+	
+	public String CreatedEmployee(Employee employee) throws GPMException;
+	
+	
+}

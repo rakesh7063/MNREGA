@@ -1,0 +1,13 @@
+package com.job.exception;
+
+public class EmployeeException {
+	
+	public EmployeeException() {
+		
+	}
+
+	public EmployeeException(String massenge) {
+		super(massenge);
+	}
+	
+}

@@ -1,0 +1,27 @@
+package com.job.MainClass;
+
+import com.job.CustomColor.ConsoleColor;
+
+public class UserClass {
+	
+	static void BDOORGPM() {
+		System.out.println(ConsoleColor.BLACK_BOLD_BRIGHT + "+---------------------------+" + "\n"
+						 						   + "| 1. Login As BDO |" + "\n"
+						 						   + "| 2. Login As GPM |" + "\n"
+						 						   + "| 3. Exit                   |" + "\n"
+						 						   + "+---------------------------+" +ConsoleColor.RESET);
+	}
+	public static void main(String[] args) {
+		System.out.println( ConsoleColor.PURPLE+  "::::WELCOME To Mahatma Gandhi National Rural Employment Guarantee Act Application::::"+ConsoleColor.WHITE_BACKGROUND);
+		
+		BDOORGPM();
+	
+	}
+	
+	
+	
+	
+
+	
+
+}
